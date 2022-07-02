@@ -1,0 +1,12 @@
+{
+	"id": "{9D96F918-4B94-4839-91DC-B1D944FD2015}",
+	"author": "Javier Ledesma",
+	"name": "Zwavejs2Mqtt",
+	"url": "https://github.com/ledesma/IPS-Zwavejs2Mqtt",
+	"compatibility": {
+        "version": "6.0"
+    },
+	"version": "1.0.1",
+	"build": 0,
+	"date": 0
+}

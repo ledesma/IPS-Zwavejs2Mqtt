@@ -1,0 +1,11 @@
+{
+	"id": "{CD356913-763D-454E-880B-F1580758EC8E}",
+	"name": "ZWavejs2MQTTDimmer",
+	"type": 3,
+	"vendor": "",
+	"aliases": ["ZWavejs2MQTT Dimmer"],
+	"parentRequirements": ["{043EA491-0325-4ADD-8FC2-A30C8EEB4D3F}"],
+	"childRequirements": [],
+	"implemented": ["{7F7632D9-FA40-4F38-8DEA-C83CD4325A32}"],
+	"prefix": "ZW2M"
+}

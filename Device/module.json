@@ -1,0 +1,11 @@
+{
+	"id": "{2F484AAA-C1E1-4D2E-9635-68FF0361BC44}",
+	"name": "ZWavejs2MQTTDevice",
+	"type": 3,
+	"vendor": "",
+	"aliases": ["ZWavejs2MQTT Device"],
+	"parentRequirements": ["{043EA491-0325-4ADD-8FC2-A30C8EEB4D3F}"],
+	"childRequirements": [],
+	"implemented": ["{7F7632D9-FA40-4F38-8DEA-C83CD4325A32}"],
+	"prefix": "ZW2M"
+}
