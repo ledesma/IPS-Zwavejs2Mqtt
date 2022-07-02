@@ -4,8 +4,7 @@
 
 # IPS-Zwavejs2Mqtt
 
-Modul für [IP-Symcon](https://www.symcon.de) zum einbinden von 
-Einfaches Modul zum einbinden [Zwavejs2Mqtt](https://zwave-js.github.io/zwavejs2mqtt)
+Modul für [IP-Symcon](https://www.symcon.de) zum einbinden von [Zwavejs2Mqtt](https://zwave-js.github.io/zwavejs2mqtt)
  
 ## 1. Voraussetzungen
 
