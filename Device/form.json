@@ -1,6 +1,25 @@
 {
-    "elements":
-    [
-      { "type": "ValidationTextBox", "name": "MQTTTopic", "caption": "MQTT Topic" }    
-    ]
+  "elements":
+  [
+    { "type": "ValidationTextBox", "name": "MQTTTopic", "caption": "MQTT Topic" },
+    { "type": "List", 
+      "name": "Associations", 
+      "caption": "Associations", 
+      "add": true, 
+      "delete": true,
+      "link": true,
+      "columns": [
+        {
+          "caption": "InstanceID",
+          "name": "InstanceID", 
+          "width": "400px",
+          "add": 0,
+          "edit": {
+              "type": "SelectInstance"
+          }            
+        }
+      ]
+    
+    }
+  ]
 }
