@@ -1,19 +1,12 @@
 [![Version](https://img.shields.io/badge/Symcon-PHPModul-red.svg)](https://www.symcon.de/service/dokumentation/entwicklerbereich/sdk-tools/sdk-php/)
-![Version](https://img.shields.io/badge/Symcon%20Version-5.1%20%3E-blue.svg)
+![Version](https://img.shields.io/badge/Symcon%20Version-6.0%20%3E-blue.svg)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-[![Check Style](https://github.com/Schnittcher/IPS-Zigbee2MQTT/workflows/Check%20Style/badge.svg)](https://github.com/Schnittcher/IPS-Zigbee2MQTT/actions)
 
-# IPS-Zigbee2MQTT
-   Anbindung von www.zigbee2mqtt.io an IP-Symcon.
+# IPS-Zwavejs2Mqtt
+
+Modul für [IP-Symcon](https://www.symcon.de) zum einbinden von 
+Einfaches Modul zum einbinden [Zwavejs2Mqtt](https://zwave-js.github.io/zwavejs2mqtt)
  
-   ## Inhaltverzeichnis
-   1. [Voraussetzungen](#1-voraussetzungen)
-   2. [Enthaltene Module](#2-enthaltene-module)
-   3. [Installation](#3-installation)
-   4. [Konfiguration in IP-Symcon](#4-konfiguration-in-ip-symcon)
-   5. [Spenden](#5-spenden)
-   6. [Lizenz](#6-lizenz)
-   
 ## 1. Voraussetzungen
 
 * mindestens IPS Version 6.0
@@ -22,13 +15,13 @@
 
 ## 2. Enthaltene Module
 
-* [IPS-Z2MBridge](IPS-Z2MBridge/README.md)
-* [IPS-Z2MDevice](IPS-Z2MDevice/README.md)
+* [IPS-ZW2MSwitch](Switch/README.md)
+* [IPS-Z2MDimmer](Dimmer/README.md)
 
 ## 3. Installation
-IPS-Zigbee2MQTT:
+IPS-Zwavejs2Mqtt:
 ```
-https://github.com/Schnittcher/IPS-Zigbee2MQTT.git
+https://github.com/ledesma/IPS-Zwavejs2Mqtt.git
 ```
 
 ## 4. Konfiguration in IP-Symcon

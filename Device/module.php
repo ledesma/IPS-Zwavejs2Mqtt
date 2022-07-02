@@ -6,7 +6,7 @@ require_once __DIR__ . '/../libs/MQTTHelper.php';
 require_once __DIR__ . '/../libs/VariableProfileHelper.php';
 require_once __DIR__ . '/../libs/Zigbee2MQTTHelper.php';
 
-class ZWavejs2MQTTDevice extends IPSModule
+class Zwavejs2MqttDevice extends IPSModule
 {
     use ColorHelper;
     use MQTTHelper;

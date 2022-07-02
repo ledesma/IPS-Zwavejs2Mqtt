@@ -3,7 +3,7 @@
 declare(strict_types=1);
 require_once __DIR__ . '/../libs/MQTTHelper.php';
 
-class ZWavejs2MQTTConfigurator extends IPSModule
+class Zwavejs2MqttConfigurator extends IPSModule
 {
     use MQTTHelper;
 
