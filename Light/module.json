@@ -1,9 +1,9 @@
 {
-	"id": "{2F484AAA-C1E1-4D2E-9635-68FF0361BC44}",
-	"name": "Zwavejs2MqttDevice",
+	"id": "{B549B80B-4E79-2D06-0D1D-02A19A457402}",
+	"name": "Zwavejs2MqttLight",
 	"type": 3,
 	"vendor": "Ledesma",
-	"aliases": ["Zwavejs2Mqtt Device"],
+	"aliases": ["Zwavejs2Mqtt Light"],
 	"parentRequirements": ["{043EA491-0325-4ADD-8FC2-A30C8EEB4D3F}"],
 	"childRequirements": [],
 	"implemented": ["{7F7632D9-FA40-4F38-8DEA-C83CD4325A32}"],

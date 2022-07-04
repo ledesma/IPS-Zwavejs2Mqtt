@@ -23,16 +23,24 @@ trait CommandHelper
         if (!empty($this->ReadPropertyString('MQTTTopic'))) {
             $buffer = json_decode($json);
             // buffer decodieren und in eine Variable schreiben
-            $this->SendDebug('MQTT Topic', $buffer->Topic, 0);
-            $this->SendDebug('MQTT Payload', $buffer->Payload, 0);
+            $this->SendDebug('ReceiveData', 'MQTT Topic: '.$buffer->Topic, 0);
+            $this->SendDebug('ReceiveData', 'MQTT Payload: '. $buffer->Payload, 0);
             if(fnmatch('*/currentValue', $buffer->Topic)){
                 $value = $buffer->Payload;
                 if($this->topicContains("switch_multilevel")) {
                     SetValue($this->GetIDForIdent('ZW2M_State'), $value > 0);
                     SetValue($this->GetIDForIdent('ZW2M_Brightness'), $value);
+                    $this->notifyAssociations(function($id, $val) {
+                        $this->SendDebug('ReceiveData', "calling association: ZW2M_DimSet($id, $val)", 0);
+                        ZW2M_DimSet($id, $val);
+                    }, $value);            
                 }
                 else if($this->topicContains("switch_binary")) {
                     SetValue($this->GetIDForIdent('ZW2M_State'), $value);
+                    $this->notifyAssociations(function($id, $val) {
+                        $this->SendDebug('ReceiveData', "calling association: ZW2M_SwitchMode($id, $val)", 0);
+                        ZW2M_SwitchMode($id, $val);
+                    }, $value);            
                 }
             }
         }
@@ -40,6 +48,7 @@ trait CommandHelper
 
     public function SwitchMode(bool $state) {
         if($this->topicContains("switch_multilevel")) {
+            $this->SendDebug('DimSet', $state, 0);
             $this->sendEvent($state ? 100 : 0);
         } 
         else if($this->topicContains("switch_binary")) {
@@ -49,18 +58,21 @@ trait CommandHelper
             $this->LogMessage("Instanz kann nicht switchen", KL_WARNING);
         }
         $this->notifyAssociations(function($id, $val) {
+            $this->SendDebug('SwitchMode', "calling association: ZW2M_SwitchMode($id, $val)", 0);
             ZW2M_SwitchMode($id, $val);
         }, $state);
     }
 
     public function DimSet(int $value) {
         if($this->topicContains("switch_multilevel")) {
+            $this->SendDebug('DimSet', $value, 0);
             $this->sendEvent($value);
         } 
         else {
             $this->LogMessage("Instanz kann nicht dimmen", KL_WARNING);
         }
         $this->notifyAssociations(function($id, $val) {
+            $this->SendDebug('DimSet', "calling association: ZW2M_DimSet($id, $val)", 0);
             ZW2M_DimSet($id, $val);
         }, $value);
     }

@@ -1,0 +1,54 @@
+{
+    "elements": [
+        {
+            "type": "ValidationTextBox",
+            "name": "MQTTTopic",
+            "caption": "MQTT Topic"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Configurator",
+            "name": "Configurator",
+            "caption": "Nodes",
+            "delete": false,
+            "sort": {
+                "column": "id",
+                "direction": "ascending"
+            },
+            "columns": [
+                {
+                    "caption": "Node Id",
+                    "name": "id",
+                    "width": "auto"
+                },
+                {
+                    "caption": "Name",
+                    "name": "name",
+                    "width": "300px"
+                },
+                {
+                    "caption": "Location",
+                    "name": "location",
+                    "width": "300px"
+                },
+                {
+                    "caption": "Manufacturer",
+                    "name": "manufacturer",
+                    "width": "300px"
+                },
+                {
+                    "caption": "Product",
+                    "name": "productDescription",
+                    "width": "300px"
+                },
+                {
+                    "caption": "Product code",
+                    "name": "productLabel",
+                    "width": "300px"
+                }
+            ],
+            "values": []
+        }
+    ]
+}

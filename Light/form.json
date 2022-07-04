@@ -1,0 +1,36 @@
+{
+  "elements":
+  [
+      { "type": "ValidationTextBox", "name": "MQTTBaseTopic", "caption": "MQTT Base Topic" },
+      { "type": "NumberSpinner", "name": "nodeId", "caption": "Node ID" },
+      { "type": "NumberSpinner", "name": "endpoint", "caption": "Endpoint" },
+      { "type": "ValidationTextBox", "name": "name", "caption": "name" },
+      { "type": "ValidationTextBox", "name": "location", "caption": "Location" },
+      { "type": "ValidationTextBox", "name": "manufacturer", "caption": "Manufacturer" },
+      { "type": "ValidationTextBox", "name": "productLabel", "caption": "Product" },
+      { "type": "CheckBox", "name": "switch", "caption": "Switch" },
+      { "type": "CheckBox", "name": "dimmer", "caption": "Dimmer" },
+      { "type": "ExpansionPanel", "caption": "Advanced", "items": [
+        { "type": "List", 
+          "name": "Associations", 
+          "caption": "Associations", 
+          "add": true, 
+          "delete": true,
+          "link": true,
+          "columns": [
+            {
+              "caption": "InstanceID",
+              "name": "InstanceID", 
+              "width": "400px",
+              "add": 0,
+              "edit": {
+                  "type": "SelectInstance"
+              }            
+            }
+          ]
+        
+        }
+      ]},
+      {"type": "TestCenter"}
+  ]
+}
