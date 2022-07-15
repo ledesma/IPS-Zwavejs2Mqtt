@@ -24,24 +24,23 @@ trait LightHelper
         // buffer decodieren und in eine Variable schreiben
         $this->SendDebug('ReceiveData', 'MQTT Topic: '.$buffer->Topic, 0);
         $this->SendDebug('ReceiveData', 'MQTT Payload: '. $buffer->Payload, 0);
-        if(fnmatch('*/currentValue', $buffer->Topic)){
+        if(fnmatch('*/switch_multilevel/*/currentValue', $buffer->Topic)){
             $value = $buffer->Payload;
-            if($this->isDimmer()) {
-                SetValue($this->GetIDForIdent('ZW2M_State'), $value > 0);
-                SetValue($this->GetIDForIdent('ZW2M_Brightness'), $value);
-                $this->notifyAssociations(function($id, $val) {
-                    $this->SendDebug('ReceiveData', "calling association: ZW2M_DimSet($id, $val)", 0);
-                    ZW2M_DimSet($id, $val);
-                }, $value);            
-            }
-            if($this->isSwitch()) {
-                SetValue($this->GetIDForIdent('ZW2M_State'), $value);
-                $this->notifyAssociations(function($id, $val) {
-                    $this->SendDebug('ReceiveData', "calling association: ZW2M_SwitchMode($id, $val)", 0);
-                    ZW2M_SwitchMode($id, $val);
-                }, $value);            
-            }
+            SetValue($this->GetIDForIdent('ZW2M_State'), $value > 0);
+            SetValue($this->GetIDForIdent('ZW2M_Brightness'), $value);
+            $this->notifyAssociations(function($id, $val) {
+                $this->SendDebug('ReceiveData', "calling association: ZW2M_DimSet($id, $val)", 0);
+                ZW2M_DimSet($id, $val);
+            }, $value);            
         }
+        else if(fnmatch('*/switch_binary/*/currentValue', $buffer->Topic)){
+            $value = $buffer->Payload;
+            SetValue($this->GetIDForIdent('ZW2M_State'), $value);
+            $this->notifyAssociations(function($id, $val) {
+                $this->SendDebug('ReceiveData', "calling association: ZW2M_SwitchMode($id, $val)", 0);
+                ZW2M_SwitchMode($id, $val);
+            }, $value);            
+        }        
     }
 
     public function SwitchMode(bool $state) {
